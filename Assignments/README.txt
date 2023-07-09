@@ -1,1 +1,1 @@
-This folder contains assignments of "Linux System Programming".
+This folder contains assignments of "Linux System Programming & Unix Internals".
