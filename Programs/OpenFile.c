@@ -1,4 +1,5 @@
 //This program opens a file in read and write mode
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<fcntl.h>
 
