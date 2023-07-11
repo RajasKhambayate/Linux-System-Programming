@@ -1,4 +1,4 @@
-//This program opens a file in read and write mode .
+//This program opens a file in read and write mode
 #include<stdio.h>
 #include<fcntl.h>
 
