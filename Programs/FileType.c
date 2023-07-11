@@ -1,4 +1,5 @@
-//This program displays type of a existing file.
+//This program displays type of a existing file
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<stdlib.h>
 #include<fcntl.h>
