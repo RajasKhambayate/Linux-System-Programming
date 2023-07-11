@@ -17,7 +17,7 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    fd = open(argv[1],O_RDONLY);
+    fd = open(argv[1],O_RDWR);
     if(fd == -1)
     {
         printf("Unable to open file\n");
