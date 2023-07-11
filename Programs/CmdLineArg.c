@@ -1,4 +1,5 @@
 //This program shows the use of command line arguments
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 
 int	main(int argc,char *argv[])
