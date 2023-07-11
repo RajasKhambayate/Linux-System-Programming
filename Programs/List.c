@@ -1,4 +1,5 @@
-//This program displays files in directory along with there inode number.
+//This program displays files in directory along with there inode number
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
