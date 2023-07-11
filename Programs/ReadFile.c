@@ -1,4 +1,5 @@
-//This program will read a file using a system call
+//This program will read a file and display its data on console
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
