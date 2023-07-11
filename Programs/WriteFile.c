@@ -1,4 +1,5 @@
 //This program will write data from a file on console using a system call
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
