@@ -1,4 +1,5 @@
-//This program performs task of stat command which displays properties of existing file.
+//This program displays properties of a file from its name which currently exists
+//Usage : "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
