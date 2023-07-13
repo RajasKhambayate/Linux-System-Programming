@@ -1,5 +1,5 @@
 //This program will read a file and display its data on console
-//Usage : "./Name_of_Executable   Name_of_File"
+//Usage : "./Name_of_Executable   Name_of_File Number_of_Bytes_to_Read"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
