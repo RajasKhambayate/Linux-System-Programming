@@ -27,5 +27,7 @@ int main(int argc, char *argv[])
     printf("File system number : %d\n",Fstat_obj.st_dev);
     printf("Number of blocks : %d\n",Fstat_obj.st_blocks);
 
+    close(fd);
+
     return 0;
 }
