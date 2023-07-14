@@ -1,5 +1,5 @@
 //This program will read a file and display its data on console
-//Usage : "./Name_of_Executable   Name_of_File Number_of_Bytes_to_Read"
+//Usage : "./Name_of_Executable   Name_of_File   Number_of_Bytes_to_Read"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
@@ -23,8 +23,7 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    printf("\n");
-    Buffer = (char *)malloc(sizeof(atoi(argv[2])));
+    Buffer = (char *)malloc(atoi(argv[2]));
 
     iRet = read(fd,Buffer,atoi(argv[2]));
     if(iRet == 0)
@@ -35,6 +34,7 @@ int main(int argc,char *argv[])
 
     printf("Data from file is : \n");
     write(1,Buffer,iRet);
+    printf("\n");
 
     return 0;
 }
