@@ -24,6 +24,8 @@ int	main(int argc,char *argv[])
 		printf("File is successfully opened with FD %d\n",fd);
 	}
 
+	close(fd);
+
 	return 0;
 }
 /*
