@@ -28,3 +28,17 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+/*
+0777
+0  -  Octal
+
+////////////User////////////////
+Owner -- 4  +  2  +  1 = 7
+Group -- 4  +  2  +  1 = 7
+Other -- 4  +  2  +  1 = 7
+
+/////////Operations//////////
+Read         4
+Wrie         2
+Execute      1
+*/
