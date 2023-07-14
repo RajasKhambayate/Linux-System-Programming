@@ -40,5 +40,8 @@ int main(int argc,char *argv[])
         memset(Buffer,0,sizeof(Buffer));
     }
 
+    close(fdSource);
+    close(fdDest);
+
     return 0;
 }
