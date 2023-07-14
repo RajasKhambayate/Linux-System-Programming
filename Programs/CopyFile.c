@@ -1,5 +1,5 @@
 //This program performs task of cp command which make a copy of existing file
-//Usage : "./Name_of_Executable    Name_of_Source-File    Name_of_Destination-File"
+//Usage :  "./Name_of_Executable    Name_of_Source-File    Name_of_Destination-File"
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
