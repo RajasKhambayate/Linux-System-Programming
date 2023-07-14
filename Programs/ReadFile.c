@@ -36,5 +36,7 @@ int main(int argc,char *argv[])
     write(1,Buffer,iRet);
     printf("\n");
 
+    close(fd);
+
     return 0;
 }
