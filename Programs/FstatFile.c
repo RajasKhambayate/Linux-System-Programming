@@ -1,5 +1,5 @@
 //This program displays properties of a file from its file descriptor which currently is running
-//Usage : "./Name_of_Executable   Name_of_File"
+//Usage :  "./Name_of_Executable   Name_of_File"
 #include<stdio.h>
 #include<stdlib.h>
 #include<fcntl.h>
