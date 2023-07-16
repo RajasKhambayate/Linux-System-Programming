@@ -1,62 +1,40 @@
 //Problem : Write a program which accept file name and mode and check whether our process can access that file in accepted or not
 //Usage : "./Name_of_Executable   Name_of_File   Mode_of_Opening_File"
 #include<stdio.h>
-#include<string.h>
+#include<fcntl.h>
 #include<unistd.h>
+#include<string.h>
 
-int	main(int argc,char *argv[])
+int main(int argc , char *argv[])
 {
-	if(argc != 3)
-	{
-		printf("Invalid number of arguments\n");
-		return -1;
-	}
-
-	int fd = 0;
-
-	if(strcmp(argv[2],"Read") == 0)
-	{
-        fd = access(argv[1],R_OK);
-        if(fd == -1)
-        {
-            printf("File can't be accessed in read mode\n");
-            return -1;
-        }
-        else if(fd == 0)
-        {
-            printf("File can be accessed in read mode\n");
-        }
+    if(argc != 3)
+    {
+        printf("Insufficient Arguments\n");
+        return -1;
     }
-	else if(strcmp(argv[2],"Write") == 0)
-	{
-        fd = access(argv[1],W_OK);
-        if(fd == -1)
-        {
-            printf("File can't be accessed in write mode\n");
-            return -1;
-        }
-        else if(fd == 0)
-        {
-            printf("File can be accessed in write mode\n");
-        }
-	}
-	else if(strcmp(argv[2],"ReadandWrite") == 0)
-	{
-        fd = access(argv[1],R_OK & W_OK);
-        if(fd == -1)
-        {
-            printf("File can't be accessed in read & write mode\n");
-            return -1;
-        }
-        else if(fd == 0)
-        {
-            printf("File can be accessed in read & write mode\n");
-        }
-	}
+
+    int mode = 0;
+
+    if(stricmp(argv[2],"read") == 0)
+    {
+        mode = R_OK;
+    }
+    if(stricmp(argv[2],"write") == 0)
+    {
+        mode = W_OK;
+    }
+    if(stricmp(argv[2],"execute") == 0)
+    {
+        mode = X_OK;
+    }
+
+    if(access(argv[1],mode) < 0)
+    {
+        printf("Unable to access %s file in %s mode\n",argv[1],argv[2]);
+    }
     else
     {
-        printf("Invalid Mode\n");
-        return -1;
+        printf("You can access %s file in %s mode\n",argv[1],argv[2]);
     }
 
     return 0;
