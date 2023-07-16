@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 
     int fd = 0;
 
-    fd = open(argv[1],0777);
+    fd = create(argv[1],0777);
     if(fd == -1)
     {
         printf("Unable to create the file\n");
