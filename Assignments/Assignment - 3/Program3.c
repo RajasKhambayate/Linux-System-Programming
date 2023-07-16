@@ -17,7 +17,6 @@ int main(int argc,char *argv[])
 
     int iNo1 = 0,iNo2 = 0;
     int iRet = 0;
-    int fd_destination = 0;
 
     char FilePath_Source[50] = {'\0'};
     char FilePath_Destination[50] = {'\0'};
@@ -34,10 +33,10 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    fd_destination = mkdir(argv[2],0777);
-    if(fd_destination == -1)
+    dp_destination = opendir(argv[2]);
+    if(dp_destination == NULL)
     {
-        printf("Unable to create destination directory\n");
+        printf("Unable to open destination directory\n");
         return -1;
     }
 
@@ -67,7 +66,8 @@ int main(int argc,char *argv[])
 
     printf("Files moved successfully\n");
 
-    close(fd_destination);
+    closedir(dp_source);
+    closedir(dp_destination);
 
     return 0;
 }
