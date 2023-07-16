@@ -22,7 +22,6 @@ int main(int argc,char *argv[])
     char FilePath_Destination[50] = {'\0'};
 
     DIR *dp_source = NULL;
-    DIR *dp_destination = NULL;
 
     struct dirent * entry = NULL;
 
@@ -30,13 +29,6 @@ int main(int argc,char *argv[])
     if(dp_source == NULL)
     {
         printf("Unable to open directory\n");
-        return -1;
-    }
-
-    dp_destination = opendir(argv[2]);
-    if(dp_destination == NULL)
-    {
-        printf("Unable to open destination directory\n");
         return -1;
     }
 
@@ -67,7 +59,6 @@ int main(int argc,char *argv[])
     printf("Files moved successfully\n");
 
     closedir(dp_source);
-    closedir(dp_destination);
 
     return 0;
 }
