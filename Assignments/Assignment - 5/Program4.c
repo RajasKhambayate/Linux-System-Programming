@@ -1,4 +1,4 @@
-//Problem : Write a program which accept director name from user and combine all contents of file from that directory into one file named as AllCombine
+//Problem : Write a program which accept directory name from user and combine all contents of file from that directory into one file named as AllCombine
 //Usage : "./Name_of_Executable   Name_of_Directory"
 #include<stdio.h>
 #include<fcntl.h>
