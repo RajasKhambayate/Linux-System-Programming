@@ -74,7 +74,7 @@ int main(int argc,char *argv[])
             }
         }
     }
-    if((entry = readdir(dp)) != NULL)
+    if((entry = readdir(dp)) == NULL)
     {
         printf("Data has been successfully wrote into Demo.txt\n");
     }
