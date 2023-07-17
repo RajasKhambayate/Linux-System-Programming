@@ -32,9 +32,11 @@ int main(int argc,char *argv[])
             continue;
         }
 
+        iNo = snprintf(FilePath,50,"%s/%s",argv[1],argv[2]);
+
         if(strcmp(entry->d_name,argv[2]) == 0)
         {
-            remove(argv[2]);
+            remove(FilePath);
             printf("File named '%s' is present in the %s is deleted\n",argv[2],argv[1]);
             break;
         }
