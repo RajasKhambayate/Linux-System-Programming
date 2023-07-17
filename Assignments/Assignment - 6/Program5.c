@@ -1,5 +1,5 @@
 //Problem : Write a program which accept file name and offset from user , remove all data from that offset
-//Usage : "./Name_of_Executable   Name_of_File   No_of_Offset"
+//Usage : " ./Name_of_Executable   Name_of_File   No_of_Offset"
 #include<stdio.h>
 #include<fcntl.h>
 #include<unistd.h>
