@@ -1,12 +1,12 @@
 //Problem : Write a program which accepts file name and position from user and read 20 bytes from that position
 //Usage : "./Name_of_Executable   Name_of_File   Position"
 #include<stdio.h>
+#include<stdlib.h>
 #include<fcntl.h>
 #include<unistd.h>
-#include<stdlib.h>
-#include<sys/stat.h>
+#include<string.h>
 
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
     if(argc != 3)
     {
@@ -14,31 +14,26 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    struct stat Stat_obj;
-    stat(argv[1],&Stat_obj);
-
-    if(Stat_obj.st_size < atoi(argv[2]))
-    {
-        printf("Offset is greater than file size\n");
-        return -1;
-    }
-
     int fd = 0;
+    int iRet = 0;
+
+    char Buffer[20];
 
     fd = open(argv[1],O_RDONLY);
     if(fd == -1)
     {
         printf("Unable to open file\n");
+        return -1;
     }
 
-    char Buffer[20] = {'\0'};
+    lseek(fd,atoi(argv[2]),0);
 
-    lseek(fd,atoi(argv[2]),SEEK_CUR);
+    iRet = read(fd,Buffer,20);
 
-    read(fd,Buffer,20);
-    write(1,Buffer,20);
+    printf("Data from file is \n");
+    write(1,Buffer,iRet);
 
-    printf("\n");
+    close(fd);
 
     return 0;
 }
