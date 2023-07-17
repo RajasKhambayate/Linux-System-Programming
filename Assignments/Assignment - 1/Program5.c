@@ -23,8 +23,7 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    printf("\n");
-    Buffer = (char *)malloc(sizeof(atoi(argv[2])));
+    Buffer = (char *)malloc(atoi(argv[2]));
 
     iRet = read(fd,Buffer,atoi(argv[2]));
     if(iRet == 0)
