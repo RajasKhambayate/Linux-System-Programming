@@ -5,14 +5,14 @@
 
 int main(int argc,char *argv[])
 {
-    DIR *dp = NULL;
-    struct dirent * entry = NULL;
-
     if(argc != 2)
     {
         printf("Insufficient arguments\n");
         return -1;
     }
+
+    DIR *dp = NULL;
+    struct dirent * entry = NULL;
 
     dp = opendir(argv[1]);
     if(dp == NULL)
