@@ -46,8 +46,6 @@ int main(int argc,char *argv[])
     {
         iNo = snprintf(FilePath,50,"%s/%s",argv[1],entry->d_name);
 
-        stat(FilePath,&Stat_obj);
-
         if(S_ISREG(Stat_obj.st_mode))
         {
             fd_source = open(FilePath,O_RDONLY);
