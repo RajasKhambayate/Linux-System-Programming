@@ -32,8 +32,6 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    char NewFileName[30] = {'\0'};
-
     while((entry = readdir(dp_source)) != NULL)
     {
         if((strcmp(entry->d_name,"..") == 0) || (strcmp(entry->d_name,".") == 0))
@@ -41,12 +39,8 @@ int main(int argc,char *argv[])
             continue;
         }
 
-        memset(NewFileName,'\0',30 * sizeof(char));
-
         iNo1 = snprintf(FilePath_Source,50,"%s/%s",argv[1],entry->d_name);
-
-        strcat(NewFileName,entry->d_name);
-        iNo2 = snprintf(FilePath_Destination,50,"%s/%s",argv[2],NewFileName);
+        iNo2 = snprintf(FilePath_Destination,50,"%s/%s",argv[2],entry->d_name);
 
         iRet = rename(FilePath_Source,FilePath_Destination);
         if(iRet != 0)
