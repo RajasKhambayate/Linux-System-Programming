@@ -22,9 +22,6 @@ int main(int argc,char *argv[])
         return -1;
     }
 
-    char FilePath[50] = {'\0'};
-    int iNo = 0;
-
     while((entry = readdir(dp)) != NULL)
     {
         if((strcmp(entry->d_name,"..") == 0) || (strcmp(entry->d_name,".") == 0))
