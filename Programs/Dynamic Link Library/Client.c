@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<dlfcn.h>
-#include"number.h"
+#include"Dll(Problem_On_Number).h"
 
 int main()
 {
