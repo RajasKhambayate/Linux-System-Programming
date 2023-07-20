@@ -1,6 +1,6 @@
 //This file contains the methods of topic "Problem on number" .
 #include<stdio.h>
-#include"number.h"
+#include"Dll(Problem_On_Number).h"
 
 void ChkEven(int iNo)
 {
