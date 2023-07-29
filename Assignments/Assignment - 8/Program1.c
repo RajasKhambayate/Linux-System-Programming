@@ -1,46 +1,28 @@
 //This program waits till its child process terminates .
 //Usage : "./Executable_Name"
 #include<stdio.h>
-#include<stdlib.h>
 #include<unistd.h>
 #include<sys/wait.h>
-#include<sys/types.h>
 
 int main()
 {
-    int Parent_Pid = getpid();
-    printf("Parent process has started running...\n");
+    int iRet = 0;
+    int Wait_Pid = 0;
+    int Exit_status = 0;
 
-    int Status = 0,Child_Pid = 1,WaitPid_Ret = 0;
+    iRet = fork();
 
-    if(Child_Pid != 0)
+    if(iRet == 0)
     {
-        Child_Pid = fork();
-        if(Child_Pid == -1)
-        {
-            printf("Unable to create child process\n");
-            return -1;
-        }
-        else if(Child_Pid != 0)
-        {
-            printf("Child process has started running...\n");
-        }
+        execl("./ChildProcess","NULL",NULL);
     }
-
-
-    if(Child_Pid != 0)
+    else
     {
-        WaitPid_Ret = waitpid(Child_Pid,&Status,0);
+        printf("Parent is running with PID : %d\n",getpid());
 
-        while(!WIFEXITED(Status))
-        {}
+        Wait_Pid = wait(&Exit_status);
 
-        if(WIFEXITED(Status))
-        {
-            printf("Child process has terminated\n");
-        }
-
-        printf("Parent process is now going to terminated\n");
+        printf("Childprocess terminated having Pid %d with exit status %d\n",Wait_Pid,Exit_status);
     }
 
     return 0;
